@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  airflowproject:
+    image: airflow-project:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID=your-aws-access-key
+      - AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
+      - YOUTUBE_API_KEY=your-youtube-api-key
+    volumes:
+      - ./airflow:/opt/airflow
+    ports:
+      - "8080:8080"
+    command: airflow standalone

@@ -1,2 +1,9 @@
 lxml
+pyspark
+pandas
+google-api-python-client
+emoji
+azure-mgmt-storage
+azure-storage-blob
+azure-identity
 beautifulsoup4

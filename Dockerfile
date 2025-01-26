@@ -1,12 +1,12 @@
 # Base image
-FROM apache/airflow:2.10.4
+FROM apache/airflow:latest
 
 # Switch to root user for installing additional tools
 USER root
 
 # Install additional tools, clean up APT cache to reduce image size
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends vim && \
+    apt-get install -y --no-install-recommends vim git default-jdk && \
     apt-get autoremove -yqq --purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
